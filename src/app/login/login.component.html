@@ -1,0 +1,25 @@
+<main class="form-signin bg-white ">
+  <div id="alert" class=" d-none"></div>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <img class="mb-4" src="../../assets/image/pokedex logo.svg" alt="" width="300" height="150">
+    <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
+
+    <div class="form-floating">
+      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="Correo electronico"
+        #email="ngModel" [(ngModel)]="user.email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+      <label for="floatingInput">Correo electronico</label>
+    </div>
+    <div class="form-floating">
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password"
+        #password="ngModel" [(ngModel)]="user.password" required>
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <input class="w-100 btn btn-lg btn-primary" type="submit" value="login">
+
+  </form>
+  <div class="checkbox mb-3 text-center">
+    <p>si no tienes ceunta <a [routerLink]="['/registro']" class="text-decoration-none">Registrate</a>. </p>
+  </div>
+
+</main>

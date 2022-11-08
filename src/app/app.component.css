@@ -1,0 +1,23 @@
+#AVATAR {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+
+}
+nav{
+  padding: 0
+}
+
+
+.pointer{
+  cursor: pointer
+}
+
+.avatar_mask{
+  margin-top: 5px;
+ height: 30px;
+ width: 30px;
+ display:flex;
+ border-radius: 20px;
+ vertical-align:middle
+}
