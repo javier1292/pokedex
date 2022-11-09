@@ -1,0 +1,20 @@
+
+<div class="row">
+  <div class="card-group col-3 card_user" *ngFor="let entrenadores of entrenadores" style="min-width: 200px;">
+    <div class="card">
+      <img class="card-img-top cardImagen" src="{{url + 'avatar/' + entrenadores.image}}" *ngIf="entrenadores.image"
+        alt="">
+      <img class="card-img-top cardImagen" src="../../assets/image/defaultuser.jpg" *ngIf="entrenadores.image == null && entrenadores.image == undefined" alt="">
+      <div class="card-body">
+
+        <h5 class="card-title text-center">{{entrenadores.name +" "+ entrenadores.surname}}</h5>
+        <div class="d-flex col-12 justify-content-center">
+          <a class="btn btn-outline-primary m-1 form-control " [routerLink]="['/detalles',entrenadores._id]">Detalle</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Creado: {{entrenadores.date | amLocale:'es' |amDateFormat:'LL'}}</small>
+      </div>
+    </div>
+  </div>
+

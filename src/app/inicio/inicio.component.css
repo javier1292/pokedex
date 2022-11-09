@@ -1,0 +1,21 @@
+.container{
+  width: 100%;
+  margin: 10%;
+}
+
+.card{
+ margin:5px;
+ min-width:250px;
+}
+
+.row{
+  margin :0px;
+  margin-top:2.5vh;
+  padding:0;
+}
+
+
+.cardImagen{
+  height:250px
+}
+

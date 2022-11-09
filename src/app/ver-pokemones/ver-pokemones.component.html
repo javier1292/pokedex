@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="card-group col-3 card_user" *ngFor="let poke of pokemones" style="min-width: 200px;">
+    <div class="card">
+      <img class="card-img-top cardImagen" src="{{url + 'avatar/' + poke.imagen}}" *ngIf="poke.imagen"
+        alt="">
+      <img class="card-img-top cardImagen" src="../../assets/image/defaultuser.jpg" *ngIf="poke.imagen == null && poke.imagen == undefined" alt="">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Nombre: {{poke.nombre}}</li>
+          <li class="list-group-item">Nivel: {{poke.nivel}}</li>
+          <li class="list-group-item">Comentario: {{poke.comentario}}</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Creado: {{poke.date | amLocale:'es' |amDateFormat:'LL'}}</small>
+        <hr>
+        <small class="text-muted">Entrenador: {{poke.user.name}} </small>
+      </div>
+    </div>
+  </div>
+

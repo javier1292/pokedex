@@ -7,7 +7,7 @@ export class User{
     public password:string,
     public image: string,
     public whatsapp: string,
-    public ciudad: string
-
+    public ciudad: string,
+    public date:any
   ){}
 }

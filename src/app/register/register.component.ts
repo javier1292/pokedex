@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   public status: any;
   constructor(private _userService:UserService) {
     this.user = new User(
-      '','','','','','','ROLE_User',''
+      '','','','','','','ROLE_User','',''
     );
    }
 

@@ -11,6 +11,8 @@ export class UserService {
   constructor(private _http: HttpClient) {
     this.url = global.url;
   }
+
+
   Registro(user: any): Observable<any> {
     //comvertir el  objeto del usuario a un json
     let params = JSON.stringify(user);
@@ -31,32 +33,42 @@ export class UserService {
     return this._http.post(this.url + 'login', params, { headers: headers });
   }
 
-  getidentity(){
+  getidentity() {
     let identity = JSON.parse(localStorage.getItem('identity')!);
 
-    if(identity && identity !=null && identity != undefined && identity !="undefined"){
+    if (identity && identity != null && identity != undefined && identity != "undefined") {
 
       this.identity = identity;
-    }else{
+    } else {
       this.identity = null;
     }
 
     return this.identity;
   }
-  gettoken(){
+
+  getALL() {
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+    return this._http.get(this.url + '/users', { headers: headers })
+  }
+
+  detalle(id: any):Observable<any>{
+    return this._http.get(this.url+'user/'+id);
+  }
+  gettoken() {
     let token = localStorage.getItem('token');
 
-    if(token && token !=null && token != undefined && token !="undefined"){
+    if (token && token != null && token != undefined && token != "undefined") {
 
       this.token = token;
-    }else{
+    } else {
       this.token = null;
     }
 
     return this.token;
   }
 
-  update(user:any):Observable<any>{
+  update(user: any): Observable<any> {
     let params = JSON.stringify(user);
     let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.gettoken());
 

@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" [routerLink]="['']">Inicio</a>
+          <a class="nav-link " aria-current="page" [routerLink]="['/inicio']">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " [routerLink]="['']">Ver Pokemon</a>
+          <a class="nav-link " [routerLink]="['/ver-pokemones']">Ver Pokemon</a>
         </li>
     <!--     <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -21,14 +21,15 @@
       </ul>
     </div>
   </div>
-  <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+  <div class=" navbar-collapse" id="navbarNavDarkDropdown">
     <ul class="navbar-nav">
-      <img class="avatar_mask" src="{{url + 'avatar/' + identity.image}}">
-      <li class="nav-item dropdown d-flex ">
+      <img class="avatar_mask" src="{{url + 'avatar/' + identity.image}}" *ngIf="identity.image">
+      <img class="avatar_mask" src="../assets/image/defaultuser.jpg" *ngIf="identity.image == null && identity.image == undefined">
+      <li class="nav-item dropdown p">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{identity.name +" "+identity.surname}}
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['/user-edit']">Configuracion de perfil</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item pointer" (click)="logout()">Cerrar seccion</a>

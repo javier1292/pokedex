@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private _route: ActivatedRoute
   ) {
     this.user = new User(
-      '','','','','','','admin',''
+      '','','','','','','admin','',''
     );
   }
 
