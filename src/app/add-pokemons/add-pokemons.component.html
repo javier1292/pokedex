@@ -1,0 +1,37 @@
+
+<div class="modal fade" id="{{'modalForm'}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header d-flex flex-column ">
+      <div class="modal-header" hidden>
+        <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="container d-flex justify-content-center">
+        <div class="form">
+          <form [formGroup]="form" class="row" (ngSubmit)="onSubmit()">
+            <div class="title col-12">Agregar Pokemon</div>
+            <div class="input-container ic1 col-6">
+              <input id="nombre" formControlName="nombre" name="nombre" class="input" type="text" />
+              <div class="cut text-center">Nombre</div>
+            </div>
+            <div class="input-container ic1 col-6">
+              <input id="nivel" formControlName="Nivel" name="nivel" class="input" type="number" />
+              <div class="cut text-center">Nivel</div>
+            </div>
+            <div class="input-container ic1 col-6">
+              <input id="tipo" formControlName="tipo" name="tipo" class="input" type="text" />
+              <div class="cut text-center">Tipo</div>
+            </div>
+            <div class="input-container ic1 col-6">
+              <input id="comentario" formControlName="comentario" name="omentario" class="input" type="text" />
+              <div class="cut text-center">Comentario</div>
+            </div>
+            <button type="submit" class="submit" *ngIf="this.inView === false">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

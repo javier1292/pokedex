@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,9 @@ import { MomentModule } from 'angular2-moment';
 import { UserDetalleComponent } from './user-detalle/user-detalle.component';
 import { VerPokemonesComponent } from './ver-pokemones/ver-pokemones.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { MyPokemonsComponent } from './my-pokemons/my-pokemons.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddPokemonsComponent } from './add-pokemons/add-pokemons.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     InicioComponent,
     UserDetalleComponent,
     VerPokemonesComponent,
-    UserEditComponent
+    UserEditComponent,
+    MyPokemonsComponent,
+    AddPokemonsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,9 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     HttpClientModule,
     AppRoutingModule,
     AngularFileUploaderModule,
-    MomentModule
+    MomentModule,
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

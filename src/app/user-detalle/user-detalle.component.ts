@@ -64,7 +64,7 @@ export class UserDetalleComponent implements OnInit {
        this._pokemonService.getMyPokemon(id).subscribe(
         (res) =>{
           if(res.pokemon){
-            this.entrenadores = res.user;
+            this.pokemon = res.pokemon;
           }else{
             console.log("esta mal la condicional ")
           }
